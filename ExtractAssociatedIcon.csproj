@@ -7,6 +7,7 @@
 		<AssemblyName>ExtractAssociatedIcon</AssemblyName>
 		<TargetFramework>net9.0-windows</TargetFramework>
 		<Deterministic>true</Deterministic>
+		<Platforms>AnyCPU;x64;x86</Platforms>
 	</PropertyGroup>
 
 	<PropertyGroup>
