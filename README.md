@@ -1,4 +1,4 @@
-# ExtractAssociatedIcon
+# Extract Associated Icon
 A sample program (Windows Forms) that uses Windows Shell API's to extract multiple sizes of an EXE's icon.
 
 This uses the technique discussed in Raymond Chen's blog post, [How do I get a high resolution icon for a file?](https://devblogs.microsoft.com/oldnewthing/20140120-00/?p=2043)

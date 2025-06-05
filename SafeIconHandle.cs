@@ -1,27 +1,26 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 
-namespace ExtractAssociatedIcon
+namespace ExtractAssociatedIcon;
+
+public class SafeIconHandle : SafeHandle
 {
-    public class SafeIconHandle : SafeHandle
-    {
-        public SafeIconHandle() : base(IntPtr.Zero, true)
-        {
-        }
+	public SafeIconHandle() : base(IntPtr.Zero, true)
+	{
+	}
 
-        public override bool IsInvalid => this.handle == IntPtr.Zero;
+	public override bool IsInvalid => this.handle == IntPtr.Zero;
 
-        protected override bool ReleaseHandle()
-        {
-            if (DestroyIcon(this.handle))
-            {
-                this.handle = IntPtr.Zero;
-                return true;
-            }
-            return false;
-        }
+	protected override bool ReleaseHandle()
+	{
+		if (DestroyIcon(this.handle))
+		{
+			this.handle = IntPtr.Zero;
+			return true;
+		}
+		return false;
+	}
 
-        [DllImport("user32.dll", ExactSpelling = true)]
-        private static extern bool DestroyIcon(IntPtr handle);
-    }
+	[DllImport("user32.dll", ExactSpelling = true)]
+	private static extern bool DestroyIcon(IntPtr handle);
 }

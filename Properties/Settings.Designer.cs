@@ -8,22 +8,101 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExtractAssociatedIcon.Properties
-{
-
-
+namespace ExtractAssociatedIcon.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowBorderCheckBox_IsChecked {
+            get {
+                return ((bool)(this["ShowBorderCheckBox_IsChecked"]));
+            }
+            set {
+                this["ShowBorderCheckBox_IsChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Jumbo 256x256")]
+        public string PreviouslySelectedListItemName {
+            get {
+                return ((string)(this["PreviouslySelectedListItemName"]));
+            }
+            set {
+                this["PreviouslySelectedListItemName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int PreviousSelectedOpenFilter {
+            get {
+                return ((int)(this["PreviousSelectedOpenFilter"]));
+            }
+            set {
+                this["PreviousSelectedOpenFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreviousOpenFilePath {
+            get {
+                return ((string)(this["PreviousOpenFilePath"]));
+            }
+            set {
+                this["PreviousOpenFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreviousSaveFilePath {
+            get {
+                return ((string)(this["PreviousSaveFilePath"]));
+            }
+            set {
+                this["PreviousSaveFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int PreviousSelectedSaveFilter {
+            get {
+                return ((int)(this["PreviousSelectedSaveFilter"]));
+            }
+            set {
+                this["PreviousSelectedSaveFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection PreviousFiles {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["PreviousFiles"]));
+            }
+            set {
+                this["PreviousFiles"] = value;
             }
         }
     }
