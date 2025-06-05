@@ -1,40 +1,41 @@
-﻿using System;
+using System;
 using System.Drawing;
 
-namespace ExtractAssociatedIcon
+namespace ExtractAssociatedIcon;
+
+public class ImageItem : IDisposable
 {
-    public class ImageItem : IDisposable
-    {
-        public ImageItem(SafeIconHandle hIcon, Interop.SHIL imageIndex)
-        {
-            _hIcon = hIcon;
-            this.Icon = Icon.FromHandle(hIcon.DangerousGetHandle());
-            this.DisplayText = $"{imageIndex} {this.Icon.Width}x{this.Icon.Height}";
-            this.ImageIndex = imageIndex;
-        }
+	public ImageItem(SafeIconHandle hIcon, Interop.SHIL imageIndex)
+	{
+		_hIcon = hIcon;
+		this.Icon = Icon.FromHandle(hIcon.DangerousGetHandle());
+		this.DisplayText = $"{imageIndex} {this.Width}x{this.Height}";
+		this.ImageIndex = imageIndex;
+	}
 
-        public Icon Icon { get; }
+	public Icon Icon { get; }
 
-        public Interop.SHIL ImageIndex { get; }
+	public Interop.SHIL ImageIndex { get; }
 
-        public string DisplayText { get; }
+	public int Width => this.Icon.Width;
 
-        public override string ToString()
-        {
-            return this.DisplayText;
-        }
+	public int Height => this.Icon.Height;
 
-        private SafeIconHandle _hIcon;
+	public string DisplayText { get; }
 
-        public void Dispose()
-        {
-            _hIcon.Dispose();
-            GC.SuppressFinalize(this);
-        }
+	public override string ToString() => this.DisplayText;
 
-        ~ImageItem()
-        {
-            this.Dispose();
-        }
-    }
+	private SafeIconHandle _hIcon;
+
+	public void Dispose()
+	{
+		if (!_hIcon.IsInvalid)
+			_hIcon.Dispose();
+		GC.SuppressFinalize(this);
+	}
+
+	~ImageItem()
+	{
+		this.Dispose();
+	}
 }
